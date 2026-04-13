@@ -219,12 +219,6 @@ export default function Testimonials() {
       >
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "72px" }}>
-          <div
-            className="section-label reveal"
-            style={{ justifyContent: "center", color: "var(--pink)" }}
-          >
-            {t("testimonials.label")}
-          </div>
           <h2
             className="reveal"
             style={{
@@ -234,12 +228,16 @@ export default function Testimonials() {
               lineHeight: "1.1",
               color: "#111111",
               letterSpacing: "-0.5px",
-              marginTop: "20px",
-              transitionDelay: "0.15s",
             }}
           >
-            {t("testimonials.title")}
+            {t("testimonials.label")}
           </h2>
+          <div
+            className="section-label reveal"
+            style={{ justifyContent: "center", marginTop: "16px", transitionDelay: "0.15s" }}
+          >
+            {t("testimonials.title")}
+          </div>
           <p
             className="reveal"
             style={{

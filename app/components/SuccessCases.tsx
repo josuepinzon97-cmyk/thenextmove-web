@@ -96,9 +96,6 @@ export default function SuccessCases() {
       >
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "72px" }}>
-          <div className="section-label reveal" style={{ justifyContent: "center" }}>
-            {t("cases.label")}
-          </div>
           <h2
             className="reveal"
             style={{
@@ -108,12 +105,16 @@ export default function SuccessCases() {
               lineHeight: "1.1",
               color: "var(--white)",
               letterSpacing: "-0.5px",
-              marginTop: "20px",
-              transitionDelay: "0.15s",
             }}
           >
-            {t("cases.title")}
+            {t("cases.label")}
           </h2>
+          <div
+            className="section-label reveal"
+            style={{ justifyContent: "center", marginTop: "16px", transitionDelay: "0.15s" }}
+          >
+            {t("cases.title")}
+          </div>
           <p
             className="reveal"
             style={{

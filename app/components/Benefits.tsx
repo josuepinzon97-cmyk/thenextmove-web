@@ -56,9 +56,6 @@ export default function Benefits() {
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 32px", position: "relative", zIndex: 1 }}>
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "80px" }}>
-          <div className="section-label reveal" style={{ justifyContent: "center" }}>
-            {t("benefits.label")}
-          </div>
           <h2
             className="reveal"
             style={{
@@ -68,12 +65,16 @@ export default function Benefits() {
               lineHeight: "1.1",
               color: "#111111",
               letterSpacing: "-0.5px",
-              marginTop: "20px",
-              transitionDelay: "0.15s",
             }}
           >
-            {t("benefits.title")}
+            {t("benefits.label")}
           </h2>
+          <div
+            className="section-label reveal"
+            style={{ justifyContent: "center", marginTop: "16px", transitionDelay: "0.15s" }}
+          >
+            {t("benefits.title")}
+          </div>
         </div>
 
         {/* Benefits Grid */}

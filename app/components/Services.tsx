@@ -104,7 +104,19 @@ export default function Services() {
       >
         {/* Header */}
         <div style={{ marginBottom: "72px" }}>
-          <div className="section-label reveal">{t("services.label")}</div>
+          <h2
+            className="reveal"
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(38px, 4vw, 60px)",
+              fontWeight: "700",
+              lineHeight: "1.1",
+              color: "var(--white)",
+              letterSpacing: "-0.5px",
+            }}
+          >
+            {t("services.label")}
+          </h2>
           <div
             style={{
               display: "grid",
@@ -115,20 +127,12 @@ export default function Services() {
             }}
             className="services-header-grid"
           >
-            <h2
-              className="reveal"
-              style={{
-                fontFamily: "var(--font-bebas)",
-                fontSize: "clamp(38px, 4vw, 60px)",
-                fontWeight: "700",
-                lineHeight: "1.1",
-                color: "var(--white)",
-                letterSpacing: "-0.5px",
-                transitionDelay: "0.1s",
-              }}
+            <div
+              className="section-label reveal"
+              style={{ transitionDelay: "0.1s" }}
             >
               {t("services.title")}
-            </h2>
+            </div>
             <p
               className="reveal"
               style={{
