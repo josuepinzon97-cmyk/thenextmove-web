@@ -6,7 +6,17 @@ import { useLanguage } from "../context/LanguageContext";
 export default function Services() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
+  const detailRef = useRef<HTMLDivElement>(null);
   const [activeService, setActiveService] = useState(0);
+
+  const handleSelectService = (index: number) => {
+    setActiveService(index);
+    if (window.innerWidth < 768) {
+      setTimeout(() => {
+        detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -168,7 +178,7 @@ export default function Services() {
             {services.map((s, i) => (
               <button
                 key={i}
-                onClick={() => setActiveService(i)}
+                onClick={() => handleSelectService(i)}
                 style={{
                   width: "100%",
                   display: "flex",
@@ -234,6 +244,7 @@ export default function Services() {
 
           {/* Detail panel */}
           <div
+            ref={detailRef}
             style={{
               background: "var(--black)",
               border: "1px solid rgba(255,255,255,0.05)",
