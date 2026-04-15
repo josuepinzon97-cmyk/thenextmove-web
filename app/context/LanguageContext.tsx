@@ -24,7 +24,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.title1": "Tu próximo movimiento",
     "hero.title2": "define el juego.",
     "hero.subtitle":
-      "Ayudamos a clínicas, abogados, terapeutas y profesionales de alto ticket a llenar su agenda con citas calificadas.",
+      "Ayudamos a clínicas, abogados, terapeutas, coaches, nutricionistas, arquitectos y más profesionales de alto ticket a llenar su agenda con citas calificadas.",
     "hero.cta1": "Agenda tu diagnóstico",
     "hero.cta2": "Ver servicios",
     "hero.stat1": "Clientes activos",

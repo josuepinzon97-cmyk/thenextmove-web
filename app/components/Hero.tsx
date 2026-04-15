@@ -214,7 +214,7 @@ export default function Hero() {
 
           {/* Stats */}
           <div
-            className="animate-fade-up"
+            className="animate-fade-up hero-stats"
             style={{
               display: "flex",
               gap: "40px",
@@ -260,6 +260,7 @@ export default function Hero() {
 
         {/* Right: Chess Board Visual */}
         <div
+          className="hero-visual"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -470,6 +471,12 @@ export default function Hero() {
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
+          }
+          .hero-visual {
+            display: none !important;
+          }
+          .hero-stats {
+            display: none !important;
           }
         }
       `}</style>

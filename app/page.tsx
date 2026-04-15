@@ -48,11 +48,6 @@ export default function Home() {
           <Results />
         </Section>
 
-        {/* 7 — dark */}
-        <Section>
-          <Process />
-        </Section>
-
         {/* 8 — light (Benefits moved down) */}
         <Section variant="light">
           <Benefits />
