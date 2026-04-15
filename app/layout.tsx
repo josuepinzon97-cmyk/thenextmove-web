@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Outfit } from "next/font/google";
+import { Bebas_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 
@@ -9,7 +9,7 @@ const bebasNeue = Bebas_Neue({
   weight: ["400"],
 });
 
-const outfit = Outfit({
+const poppins = Poppins({
   variable: "--font-jakarta",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${bebasNeue.variable} ${outfit.variable} h-full`}
+      className={`${bebasNeue.variable} ${poppins.variable} h-full`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

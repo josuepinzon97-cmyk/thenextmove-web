@@ -129,9 +129,10 @@ export default function Results() {
             className="reveal"
             style={{
               fontFamily: "var(--font-jakarta)",
-              fontSize: "17px",
-              lineHeight: "1.8",
-              color: subtitleColor,
+              fontSize: "19px",
+              lineHeight: "1.7",
+              color: "#111111",
+              fontWeight: "600",
               transitionDelay: "0.2s",
             }}
           >

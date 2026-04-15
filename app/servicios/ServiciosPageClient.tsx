@@ -481,10 +481,10 @@ export default function ServiciosPageClient() {
               style={{
                 fontFamily: "var(--font-bebas)",
                 fontSize: "clamp(52px, 8vw, 110px)",
-                fontWeight: "400",
+                fontWeight: "800",
                 lineHeight: "1.0",
                 color: "var(--white)",
-                letterSpacing: "2px",
+                letterSpacing: "-1px",
                 marginBottom: "24px",
               }}
             >
@@ -690,8 +690,8 @@ export default function ServiciosPageClient() {
                     style={{
                       fontFamily: "var(--font-bebas)",
                       fontSize: "clamp(36px, 4vw, 56px)",
-                      fontWeight: "400",
-                      letterSpacing: "1px",
+                      fontWeight: "800",
+                      letterSpacing: "-0.5px",
                       color: "var(--white)",
                       lineHeight: "1.05",
                       marginBottom: "12px",
@@ -938,8 +938,8 @@ export default function ServiciosPageClient() {
                 style={{
                   fontFamily: "var(--font-bebas)",
                   fontSize: "clamp(36px, 4vw, 56px)",
-                  fontWeight: "400",
-                  letterSpacing: "1px",
+                  fontWeight: "800",
+                  letterSpacing: "-0.5px",
                   color: "var(--white)",
                   marginTop: "16px",
                   transitionDelay: "0.1s",
@@ -1046,8 +1046,8 @@ export default function ServiciosPageClient() {
                 style={{
                   fontFamily: "var(--font-bebas)",
                   fontSize: "clamp(36px, 4vw, 54px)",
-                  fontWeight: "400",
-                  letterSpacing: "1px",
+                  fontWeight: "800",
+                  letterSpacing: "-0.5px",
                   color: "var(--white)",
                   marginTop: "16px",
                   transitionDelay: "0.1s",
@@ -1157,8 +1157,8 @@ export default function ServiciosPageClient() {
               style={{
                 fontFamily: "var(--font-bebas)",
                 fontSize: "clamp(44px, 6vw, 76px)",
-                fontWeight: "400",
-                letterSpacing: "2px",
+                fontWeight: "800",
+                letterSpacing: "-1px",
                 color: "var(--white)",
                 lineHeight: "1.05",
                 marginBottom: "20px",

@@ -407,8 +407,8 @@ export default function Hero() {
               style={{
                 fontFamily: "var(--font-bebas)",
                 fontSize: "clamp(22px, 3vw, 38px)",
-                fontWeight: "400",
-                letterSpacing: "2px",
+                fontWeight: "800",
+                letterSpacing: "-0.5px",
                 lineHeight: "1.15",
                 color: "rgba(255,255,255,0.9)",
                 margin: 0,

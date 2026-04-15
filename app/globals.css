@@ -69,6 +69,7 @@ body {
   background: var(--black);
   color: var(--white);
   font-family: var(--font-jakarta), sans-serif;
+  font-size: 18px;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -3,30 +3,6 @@
 import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
-// Row 1 only: dark · light · dark
-const DARK = {
-  bg: "#0a0a0a",
-  title: "#ffffff",
-  desc: "rgba(255,255,255,0.45)",
-  cta: "#ffffff",
-  ctaArrow: "rgba(255,255,255,0.5)",
-  num: "rgba(255,255,255,0.12)",
-  border: "rgba(255,255,255,0.06)",
-  hoverBg: "#141414",
-};
-const LIGHT = {
-  bg: "#f0eeeb",
-  title: "#0a0a0a",
-  desc: "rgba(10,10,10,0.55)",
-  cta: "#0a0a0a",
-  ctaArrow: "rgba(10,10,10,0.4)",
-  num: "rgba(10,10,10,0.1)",
-  border: "rgba(0,0,0,0.07)",
-  hoverBg: "#e8e5e1",
-};
-
-const PATTERN = [DARK, LIGHT, DARK];
-
 export default function ValueProp() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,32 +21,21 @@ export default function ValueProp() {
     return () => observer.disconnect();
   }, []);
 
-  // Only first 3 pillars
-  const pillars = [
-    { titleKey: "value.p1.title", descKey: "value.p1.desc", ctaKey: "value.p1.cta", delay: "0s" },
-    { titleKey: "value.p2.title", descKey: "value.p2.desc", ctaKey: "value.p2.cta", delay: "0.1s" },
-    { titleKey: "value.p3.title", descKey: "value.p3.desc", ctaKey: "value.p3.cta", delay: "0.2s" },
+  const bullets = [
+    "Estrategias adaptadas a tu sector",
+    'Enfoque en clientes reales, no "likes"',
+    "Sistema probado paso a paso",
+    "Claridad total en lo que se hace y por qué",
   ];
 
   return (
-    <section
-      ref={sectionRef}
-      style={{
-        padding: "120px 0 0",
-        background: "#050505",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Background glows */}
-      <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "700px", height: "700px", background: "radial-gradient(ellipse, rgba(203,10,118,0.12) 0%, transparent 65%)", pointerEvents: "none" }} />
-      <div style={{ position: "absolute", bottom: "100px", left: "-200px", width: "600px", height: "600px", background: "radial-gradient(ellipse, rgba(203,10,118,0.07) 0%, transparent 65%)", pointerEvents: "none" }} />
+    <section ref={sectionRef} style={{ position: "relative", overflow: "hidden" }}>
 
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 32px", position: "relative", zIndex: 1 }}>
-        {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "80px" }}>
+      {/* ── Header (fondo oscuro) ── */}
+      <div style={{ background: "#050505", padding: "100px 32px 72px" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
           <div className="section-label reveal" style={{ justifyContent: "center" }}>
-            {t("value.label")}
+            ¿Por qué escogernos?
           </div>
           <h2
             className="reveal"
@@ -78,157 +43,206 @@ export default function ValueProp() {
               fontFamily: "var(--font-bebas)",
               fontSize: "clamp(36px, 4.5vw, 68px)",
               fontWeight: "700",
-              lineHeight: "1.05",
+              lineHeight: "1.1",
               color: "var(--white)",
               letterSpacing: "-0.5px",
-              margin: "20px auto 24px",
-              maxWidth: "860px",
+              margin: "20px auto 0",
               transitionDelay: "0.1s",
             }}
           >
-            {t("value.title")}
+            ¿Por qué elegirnos para llenar tu agenda de clientes?
           </h2>
-          <p
-            className="reveal"
-            style={{
-              fontFamily: "var(--font-jakarta)",
-              fontSize: "18px",
-              lineHeight: "1.75",
-              color: "rgba(255,255,255,0.5)",
-              maxWidth: "580px",
-              margin: "0 auto",
-              transitionDelay: "0.2s",
-            }}
-          >
-            {t("value.subtitle")}
-          </p>
-        </div>
-
-        {/* Grid 1×3 */}
-        <div
-          className="value-pillars-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1px",
-            background: "rgba(255,255,255,0.06)",
-          }}
-        >
-          {pillars.map((p, i) => {
-            const theme = PATTERN[i];
-            return (
-              <div
-                key={i}
-                className="reveal value-card"
-                data-index={i}
-                style={{
-                  padding: "52px 44px",
-                  background: theme.bg,
-                  position: "relative",
-                  transitionDelay: p.delay,
-                  cursor: "default",
-                }}
-              >
-                {/* Top accent line */}
-                <div
-                  className="card-top-line"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: "100%",
-                    height: "2px",
-                    background: "var(--pink)",
-                    transition: "right 0.4s ease",
-                  }}
-                />
-
-                {/* Large number */}
-                <div
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: "72px",
-                    lineHeight: "1",
-                    color: theme.num,
-                    marginBottom: "28px",
-                    letterSpacing: "-2px",
-                    userSelect: "none",
-                  }}
-                >
-                  0{i + 1}
-                </div>
-
-                <h3
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: "26px",
-                    fontWeight: "700",
-                    color: theme.title,
-                    lineHeight: "1.2",
-                    marginBottom: "14px",
-                    letterSpacing: "0.2px",
-                  }}
-                >
-                  {t(p.titleKey)}
-                </h3>
-
-                <p
-                  style={{
-                    fontFamily: "var(--font-jakarta)",
-                    fontSize: "14px",
-                    lineHeight: "1.8",
-                    color: theme.desc,
-                    marginBottom: "24px",
-                  }}
-                >
-                  {t(p.descKey)}
-                </p>
-
-                {/* Insight row */}
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "10px",
-                    paddingTop: "18px",
-                    borderTop: `1px solid ${theme.border}`,
-                  }}
-                >
-                  <span
-                    style={{
-                      color: theme.ctaArrow,
-                      fontSize: "14px",
-                      fontWeight: "700",
-                      flexShrink: 0,
-                      marginTop: "1px",
-                    }}
-                  >
-                    →
-                  </span>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-jakarta)",
-                      fontSize: "13px",
-                      lineHeight: "1.6",
-                      color: theme.cta,
-                      fontWeight: "700",
-                      margin: 0,
-                    }}
-                  >
-                    {t(p.ctaKey)}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
         </div>
       </div>
 
-      {/* Closing impact banner */}
+      {/* ── Subtítulo (fondo claro) ── */}
+      <div style={{ background: "#f5f4f2", padding: "64px 32px 56px" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+          <p
+            className="reveal"
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(26px, 3vw, 44px)",
+              fontWeight: "700",
+              lineHeight: "1.2",
+              letterSpacing: "-0.3px",
+              color: "#111111",
+            }}
+          >
+            No somos una agencia más.{" "}
+            <span style={{ color: "var(--pink)" }}>
+              Somos un sistema enfocado en resultados reales
+            </span>{" "}
+            para servicios profesionales.
+          </p>
+        </div>
+      </div>
+
+      {/* ── Split: claro izquierda / oscuro derecha ── */}
+      <div
+        className="valueprop-split"
+        style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
+      >
+        {/* Lado claro — problema */}
+        <div
+          style={{
+            background: "#f5f4f2",
+            padding: "72px 64px 80px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <h3
+            className="reveal-left"
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(28px, 3vw, 46px)",
+              fontWeight: "700",
+              lineHeight: "1.15",
+              color: "#111111",
+              letterSpacing: "-0.3px",
+              marginBottom: "36px",
+            }}
+          >
+            Muchos negocios hacen marketing,
+            <br />
+            pero no consiguen clientes.
+          </h3>
+
+          <div
+            className="reveal-left"
+            style={{ transitionDelay: "0.1s", borderLeft: "3px solid var(--pink)", paddingLeft: "24px" }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--font-jakarta)",
+                fontSize: "17px",
+                fontWeight: "600",
+                lineHeight: "1.5",
+                color: "#111111",
+                marginBottom: "12px",
+              }}
+            >
+              No trabajamos con cualquier negocio.
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--font-jakarta)",
+                fontSize: "16px",
+                lineHeight: "1.75",
+                color: "rgba(10,10,10,0.55)",
+                margin: 0,
+              }}
+            >
+              Los servicios profesionales necesitan un enfoque específico para
+              atraer clientes de calidad.
+            </p>
+          </div>
+        </div>
+
+        {/* Lado oscuro — propuesta */}
+        <div
+          style={{
+            background: "#0a0a0a",
+            padding: "72px 64px 80px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            className="reveal-right"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              fontFamily: "var(--font-jakarta)",
+              fontSize: "11px",
+              fontWeight: "700",
+              letterSpacing: "3px",
+              textTransform: "uppercase" as const,
+              color: "var(--pink)",
+              marginBottom: "24px",
+            }}
+          >
+            <span style={{ width: "20px", height: "1px", background: "var(--pink)", display: "inline-block" }} />
+            Lo que proponemos construir
+            <span style={{ width: "20px", height: "1px", background: "var(--pink)", display: "inline-block" }} />
+          </div>
+
+          <h3
+            className="reveal-right"
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(26px, 2.5vw, 40px)",
+              fontWeight: "700",
+              lineHeight: "1.2",
+              color: "var(--white)",
+              letterSpacing: "-0.3px",
+              marginBottom: "36px",
+              transitionDelay: "0.1s",
+            }}
+          >
+            Un sistema enfocado en generar resultados,
+            <br />
+            <span style={{ color: "var(--pink)" }}>no métricas vacías.</span>
+          </h3>
+
+          <ul
+            className="reveal-right"
+            style={{
+              listStyle: "none",
+              padding: 0,
+              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              transitionDelay: "0.2s",
+            }}
+          >
+            {bullets.map((item, i) => (
+              <li
+                key={i}
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "14px",
+                  fontFamily: "var(--font-jakarta)",
+                  fontSize: "16px",
+                  lineHeight: "1.5",
+                  color: "rgba(255,255,255,0.8)",
+                }}
+              >
+                <span
+                  style={{
+                    flexShrink: 0,
+                    width: "20px",
+                    height: "20px",
+                    background: "rgba(203,10,118,0.15)",
+                    border: "1px solid rgba(203,10,118,0.4)",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginTop: "2px",
+                  }}
+                >
+                  <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                    <path d="M1 4L3.5 6.5L9 1" stroke="#cb0a76" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* ── Banner de cierre (fondo oscuro) ── */}
       <div
         className="reveal"
         style={{
-          marginTop: "80px",
           padding: "72px 32px",
           background: "linear-gradient(135deg, #0f0f0f 0%, #1a0009 50%, #0f0f0f 100%)",
           borderTop: "1px solid rgba(203,10,118,0.2)",
@@ -248,7 +262,7 @@ export default function ValueProp() {
               fontFamily: "var(--font-jakarta)",
               fontSize: "11px",
               letterSpacing: "3px",
-              textTransform: "uppercase",
+              textTransform: "uppercase" as const,
               color: "var(--pink)",
               fontWeight: "700",
               marginBottom: "28px",
@@ -272,26 +286,10 @@ export default function ValueProp() {
       </div>
 
       <style>{`
-        .value-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-        }
-        .value-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-          z-index: 2;
-        }
-        .value-card[data-index="0"]:hover,
-        .value-card[data-index="2"]:hover {
-          box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
-        .value-card[data-index="1"]:hover {
-          box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        .value-card:hover .card-top-line {
-          right: 0 !important;
-        }
         @media (max-width: 768px) {
-          .value-pillars-grid { grid-template-columns: 1fr !important; }
+          .valueprop-split {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
     </section>

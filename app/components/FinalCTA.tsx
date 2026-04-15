@@ -119,9 +119,9 @@ export default function FinalCTA() {
           className="reveal"
           style={{
             fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(44px, 6vw, 80px)",
+            fontSize: "clamp(40px, 5vw, 68px)",
             fontWeight: "700",
-            lineHeight: "1.05",
+            lineHeight: "1.1",
             color: "#111111",
             letterSpacing: "-1px",
             marginTop: "20px",

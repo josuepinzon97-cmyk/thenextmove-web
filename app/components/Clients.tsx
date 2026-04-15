@@ -174,9 +174,9 @@ export default function Clients() {
           <h2
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(42px, 6vw, 80px)",
-              fontWeight: "400",
-              lineHeight: "1.05",
+              fontSize: "clamp(42px, 5vw, 68px)",
+              fontWeight: "700",
+              lineHeight: "1.1",
               letterSpacing: "2px",
               color: "#111111",
               marginBottom: "0",
@@ -363,9 +363,9 @@ export default function Clients() {
           <h2
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(36px, 5vw, 68px)",
-              fontWeight: "400",
-              lineHeight: "1.05",
+              fontSize: "clamp(38px, 5vw, 68px)",
+              fontWeight: "700",
+              lineHeight: "1.1",
               letterSpacing: "1.5px",
               color: "#111111",
               marginBottom: "20px",

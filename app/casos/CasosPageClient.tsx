@@ -394,10 +394,10 @@ export default function CasosPageClient() {
               style={{
                 fontFamily: "var(--font-bebas)",
                 fontSize: "clamp(56px, 8vw, 110px)",
-                fontWeight: "400",
+                fontWeight: "800",
                 lineHeight: "1.0",
                 color: "var(--white)",
-                letterSpacing: "2px",
+                letterSpacing: "-1px",
                 marginBottom: "24px",
               }}
             >
@@ -600,8 +600,8 @@ export default function CasosPageClient() {
                       style={{
                         fontFamily: "var(--font-bebas)",
                         fontSize: "28px",
-                        fontWeight: "400",
-                        letterSpacing: "1px",
+                        fontWeight: "700",
+                        letterSpacing: "-0.3px",
                         color: "var(--white)",
                         marginBottom: "12px",
                         lineHeight: "1.1",
@@ -888,8 +888,8 @@ export default function CasosPageClient() {
                   style={{
                     fontFamily: "var(--font-bebas)",
                     fontSize: "clamp(36px, 4vw, 54px)",
-                    fontWeight: "400",
-                    letterSpacing: "2px",
+                    fontWeight: "800",
+                    letterSpacing: "-0.5px",
                     color: "var(--white)",
                     marginBottom: "16px",
                   }}
